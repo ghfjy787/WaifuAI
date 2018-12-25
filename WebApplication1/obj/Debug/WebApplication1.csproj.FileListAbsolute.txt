@@ -116,7 +116,6 @@ C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Discord.Net.WebSo
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Auth.dll
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Auth.PlatformServices.dll
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Core.dll
-C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Dialogflow.v2beta1.dll
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.dll
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.PlatformServices.dll
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
@@ -137,9 +136,9 @@ C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Auth.
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Auth.xml
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Core.pdb
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Core.xml
-C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Dialogflow.v2beta1.pdb
-C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Google.Apis.Dialogflow.v2beta1.xml
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Microsoft.Extensions.DependencyInjection.xml
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\System.Collections.Immutable.xml
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\System.Interactive.Async.xml
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\ApiAi.dll
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\ApiAi.xml

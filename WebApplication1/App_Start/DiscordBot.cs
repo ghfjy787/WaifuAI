@@ -1,21 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using Discord;
 using Discord.WebSocket;
+using ApiAi.Models;
+using ApiAi;
+using System.Linq;
 
 namespace WebApplication1.App_Start
 {
     public class DiscordBot
     {
         private readonly DiscordSocketClient bot;
+        private readonly ConfigModel dialogflowConfig;
+        private readonly Random random = new Random();
 
         public DiscordBot()
         {
             bot = new DiscordSocketClient();
-
+            dialogflowConfig = new ConfigModel() {
+                AccesTokenClient = "57b94ef7ea6d46efa59db9e6a2db427f",
+                Language = ApiAi.Enums.LanguagesEnum.Italian
+            };
             bot.Ready += ReadyAsync;
             bot.MessageReceived += MessageReceivedAsync;
         }
@@ -47,8 +52,20 @@ namespace WebApplication1.App_Start
             if (message.Author.Id == bot.CurrentUser.Id)
                 return;
 
-            if (message.Content == "!ping")
-                await message.Channel.SendMessageAsync("pong!");
+            var res = QueryService.SendRequest(dialogflowConfig, message.Content);
+            
+            if(res == null) {
+                await message.Channel.SendMessageAsync("Input not recognized, oni-chan");
+                return;
+            }
+
+            var messages = res.Messages.ToArray();
+            if(messages.Length == 0) {
+                await message.Channel.SendMessageAsync("Capisco ma non saprei come risponderti, oni-chan");
+                return;
+            }
+
+            await message.Channel.SendMessageAsync(messages[random.Next(0, messages.Length - 1)].Text);
         }
     }
 }

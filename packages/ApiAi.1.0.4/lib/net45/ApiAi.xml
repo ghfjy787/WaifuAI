@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiAi</name>
+    </assembly>
+    <members>
+        <member name="T:ApiAi.Internal.Attributes.AlternativeValueAttribute">
+            <summary>
+            Alternative value for enums
+            </summary>
+        </member>
+        <member name="T:ApiAi.Internal.Attributes.AlternativeValue">
+            <summary>
+            Helper for extract alternative value of enum
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.CodesEnum.Success">
+            <summary>
+            Request was successful (HTTP code 200)
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.CodesEnum.Deprecated">
+            <summary>
+            A resource is deprecated and will be removed in the future. (HTTP code 200)
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.CodesEnum.BadRequest">
+            <summary>
+            Some required parameter is missing or has the wrong value.
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.CodesEnum.Unauthorized">
+            <summary>
+            Internal authorization failed. It might mean missing or wrong credentials.
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.CodesEnum.NotFound">
+            <summary>
+            URI is not valid or the resource ID does not correspond to an existing resource.
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.CodesEnum.NotAllowed">
+            <summary>
+            HTTP method not allowed, such as attempting to use a POST request with an endpoint that only accepts GET requests, or vice versa.
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.CodesEnum.NotAcceptable">
+            <summary>
+            Can be returned if uploaded files have some errors.
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.CodesEnum.Conflict">
+            <summary>
+            	The request could not be completed due to a conflict with the current state of the resource. This code is only returned in situations where it is expected that the user might be able to resolve the conflict and resubmit the request. For example, deleting an entity that is used in an intent will return this error.
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.CodesEnum.TooManyRequests">
+            <summary>
+            Too many requests were sent in the short amount of time.
+            </summary>
+        </member>
+        <member name="T:ApiAi.Enums.LanguagesEnum">
+            <summary>
+            API.AI supported languages
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.Brazilian">
+            <summary>
+            Brazilian Portuguese
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.ChineseCantonese">
+            <summary>
+            Chinese (Cantonese)
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.ChineseSimplified">
+            <summary>
+            Chinese (Simplified)
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.ChineseTraditional">
+            <summary>
+            Chinese (Traditional)
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.English">
+            <summary>
+            English
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.Dutch">
+            <summary>
+            Dutch
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.French">
+            <summary>
+            French
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.German">
+            <summary>
+            German
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.Italian">
+            <summary>
+            Italian
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.Japanese">
+            <summary>
+            Japanese
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.Korean">
+            <summary>
+            Korean
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.Portuguese">
+            <summary>
+            Portuguese
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.LanguagesEnum.Russian">
+            <summary>
+            Russian
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:ApiAi.Enums.LanguagesEnum.Spanish" -->
+        <member name="F:ApiAi.Enums.LanguagesEnum.Ukrainian">
+            <summary>
+            Ukrainian
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.MessageTypesEnum.Text">
+            <summary>
+            Text responses are available in all platforms. Your agent can send up to 10 sequential text messages in response to a user input (assuming no other message types are defined in the intent).
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.MessageTypesEnum.Image">
+            <summary>
+            The image message type lets your agent send images in integrations for Facebook Messenger, Kik, LINE, Skype, Slack, Telegram, and Viber.
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.MessageTypesEnum.Card">
+            <summary>
+            Cards consist of an image, a card title, a card subtitle, and interactive buttons (for sending user queries or opening links)
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.MessageTypesEnum.QuickReply">
+            <summary>
+            Quick replies are displayed in messengers as clickable buttons with pre-defined user responses
+            </summary>
+        </member>
+        <member name="F:ApiAi.Enums.MessageTypesEnum.CustomPayload">
+            You can send a custom payload to self-developed integrations. It won’t be processed by API.AI, so you'll need to handle it in your own business logic.
+        </member>
+        <member name="T:ApiAi.Models.ConfigModel">
+            <summary>
+            Services configuration
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.ConfigModel.AccesTokenDeveloper">
+            <summary>
+            Each API request requires authentication to identify the agent that is responsible for making the request. Authentication is provided through an access token.
+            The developer access token is used for managing entities and intents.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.ConfigModel.AccesTokenClient">
+            <summary>
+            Each API request requires authentication to identify the agent that is responsible for making the request. Authentication is provided through an access token.
+            The client access token is used for making queries.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.ConfigModel.Language">
+            <summary>
+            Specifed language in your Api.ai agent
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.ConfigModel.TimeZone">
+            <summary>
+            Timezone requests parameter
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.ConfigModel.SessionId">
+            <summary>
+            Session ID for request
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntityResponseModel.Id">
+            <summary>
+            ID of the entity.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntityResponseModel.Name">
+            <summary>
+            Name of the entity.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntityResponseModel.Count">
+            <summary>
+            The total number of synonyms in the entity.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntityResponseModel.Preview">
+            <summary>
+            A string that contains summary information about the entity.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntriesCollectionResponseModel.EntryResponseModel.Value">
+            <summary>
+            For mapping entities: a canonical name to be used in place of synonyms. Example: "New York"
+            For enum type entities: a string that can contain references to other entities (with or without aliases). Example: "@sys.color:color @size:size @clothes:clothes"
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntriesCollectionResponseModel.EntryResponseModel.Synonyms">
+            <summary>
+            Array of strings that can include simple strings (for words and phrases) or references to other entites (with or without aliases).
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntriesCollectionResponseModel.Id">
+            <summary>
+            A unique identifier for the entity.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntriesCollectionResponseModel.Name">
+            <summary>
+            	The name of the entity.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntriesCollectionResponseModel.Entries">
+            <summary>
+            An array of entry objects, which contain reference values and synonyms.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntriesCollectionResponseModel.IsEnum">
+            <summary>
+            Indicates if the entity is a mapping or an enum type entity.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.EntriesCollectionResponseModel.IsAutomatedExpansion">
+            <summary>
+            Indicates if the entity can be automatically expanded.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseContextModel.Name">
+            <summary>
+            Context name
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseContextModel.Parameters">
+            <summary>
+            Dictionary consisting of "parameter_name":"parameter_value" and "parameter_name.original":"original_parameter_value" pairs.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseContextModel.Lifespan">
+            <summary>
+            Number of requests after which the context will expire.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseMessageModel.MessageType">
+            <summary>
+            Response message type.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseMessageModel.Text">
+            <summary>
+            Message type field.
+            Agent's text reply. Line breaks are supported for Facebook Messenger, Kik, Slack, and Telegram one-click integrations.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseMessageModel.ImageUrl">
+            <summary>
+            Image type field.
+            Public URL to the image file.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseMessageModel.Title">
+            <summary>
+            Card message title or Quick reply message title.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseMessageModel.SubTitle">
+            <summary>
+            Card subtitle.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseMessageModel.Replies">
+            <summary>
+            Quick replies message type.
+            Array of strings corresponding to quick replies.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseMessageModel.Payload">
+            <summary>
+            Developer defined JSON. It is sent without modifications.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.Id">
+            <summary>
+            Unique identifier of the result.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.Timestamp">
+            <summary>
+            Date and time of the request in UTC timezone.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.Source">
+            <summary>
+            Source of the answer. Could be "agent" if the response was retrieved from the agent.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.Action">
+            <summary>
+            An action to take.
+            Example: turn on
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.IsIncomplete">
+            <summary>
+            True if the triggered intent has required parameters and not all the required parameter values have been collected.
+            False if all required parameter values have been collected or if the triggered intent doesn't containt any required parameters.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.Parameters">
+            <summary>
+            Dictionary consisting of "parameter_name":"parameter_value" pairs. 
+            Example: {"device": "computer"}
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.Contexts">
+            <summary>
+            Array of context objects with the fields "Name", "Parameters", "Lifespan".
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.Messages">
+            <summary>
+            Array of messages
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.Score">
+            <summary>
+            Matching score for the intent. Number between 0 and 1.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.IntentId">
+            <summary>
+            ID of the intent that produced this result.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.WebhookUsed">
+            <summary>
+            Indicates wheather webhook functionaly is enabled in the triggered intent.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.WebhookForSlotFillingUsed">
+            <summary>
+            Indicates wheather in the triggered intent webhook functionaly is enabled for required parameters.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.WebhookResponseTime">
+            <summary>
+            Webhook response time in milliseconds.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.IntentName">
+            <summary>
+            Name of the intent that produced this result.
+            </summary>
+        </member>
+        <member name="P:ApiAi.Models.QueryResponseModel.SessionId">
+            <summary>
+            Just a session ID (=
+            </summary>
+        </member>
+        <member name="T:ApiAi.EntityService">
+            <summary>
+            The entities endpoint is used to create, retrieve, update, and delete developer-defined entity objects.
+            </summary>
+        </member>
+        <member name="M:ApiAi.EntityService.GetEntities(ApiAi.Models.ConfigModel)">
+            <summary>
+            Retrieves a list of all entities for the agent.
+            <param name="config">Agent connection configuration</param>
+            </summary>
+        </member>
+        <member name="M:ApiAi.EntityService.GetEntries(ApiAi.Models.ConfigModel,System.String)">
+            <summary>
+            Retrieves the specified entity.
+            </summary>
+            <param name="config">Agent connection configuration</param>
+            <param name="entityId">Is the ID of the entity to retrieve. You can specify the entity by its name instead of its ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ApiAi.EntityService.CreateEntity(ApiAi.Models.ConfigModel,System.String,System.Collections.Generic.Dictionary{System.String,System.String[]})">
+            <summary>
+            Creates a new entity.
+            </summary>
+            <param name="config">Agent connection configuration</param>
+            <param name="name">The name of the entity.</param>
+            <param name="entries">An array of entry objects, which contain reference values and synonyms (strings array).</param>
+            <returns>ID of created entity</returns>
+        </member>
+        <member name="M:ApiAi.EntityService.UpdateEntity(ApiAi.Models.ConfigModel,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String[]})">
+            <summary>
+            Updates the specified entity.
+            </summary>
+            <param name="config">Agent connection configuration</param>
+            <param name="entityId">Is the ID of the entity to update. You can specify the entity by its name instead of its ID.</param>
+            <param name="name">The name of the entity.</param>
+            <param name="entries">An array of entry objects, which contain reference values and synonyms (strings array).</param>
+        </member>
+        <member name="M:ApiAi.EntityService.DeleteEntity(ApiAi.Models.ConfigModel,System.String)">
+            <summary>
+            Deletes the specified entity.
+            </summary>
+            <param name="config">Agent connection configuration</param>
+            <param name="entityId">Is the ID of the entity to delete. You can specify the entity by its name instead of its ID.</param>
+        </member>
+        <member name="M:ApiAi.EntityService.AddEntries(ApiAi.Models.ConfigModel,System.String,System.Collections.Generic.Dictionary{System.String,System.String[]})">
+            <summary>
+            Adds entries to the specified entity.
+            </summary>
+            <param name="config">Agent connection configuration</param>
+            <param name="entityId">Is the ID of the entity to which the entries will be added. You can specify the entity by its name instead of its ID.</param>
+            <param name="entries">An array of entry objects, which contain reference values and synonyms (strings array).</param>
+        </member>
+        <member name="M:ApiAi.EntityService.UpdateEntries(ApiAi.Models.ConfigModel,System.String,System.Collections.Generic.Dictionary{System.String,System.String[]})">
+            <summary>
+            Updates specified entity entries.
+            </summary>
+            <param name="config">Agent connection configuration</param>
+            <param name="entityId">Is the ID of the entity to which the entries will be added. You can specify the entity by its name instead of its ID.</param>
+            <param name="entries"></param>
+        </member>
+        <member name="M:ApiAi.EntityService.DeleteEntries(ApiAi.Models.ConfigModel,System.String,System.String[])">
+            <summary>
+            Deletes entity entries.
+            </summary>
+            <param name="config">Agent connection configuration</param>
+            <param name="entityId">Is the ID of the entity to which the entries will be added. You can specify the entity by its name instead of its ID.</param>
+            <param name="entries">An array of strings corresponding to the reference values of entity entries to be deleted.</param>
+        </member>
+        <member name="T:ApiAi.QueryService">
+            <summary>
+            The query endpoint is used to process natural language in the form of text.
+            </summary>
+        </member>
+        <member name="M:ApiAi.QueryService.SendRequest(ApiAi.Models.ConfigModel,System.String)">
+            <summary>
+            Takes natural language text and information as query parameters.
+            </summary>
+            <param name="config">Agent connection configuration</param>
+            <param name="message">Natural language text to be processed. Query length should not exceed 256 characters.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
