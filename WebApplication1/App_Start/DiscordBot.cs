@@ -2,32 +2,49 @@
 using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
-using ApiAi.Models;
-using ApiAi;
+using Api.Ai;
 using System.Linq;
+using System.Collections.Generic;
+using Api.Ai.ApplicationService.Factories;
+using SimpleInjector;
+using Api.Ai.Domain.Service.Factories;
+using Api.Ai.Infrastructure.Factories;
+using Api.Ai.Domain.DataTransferObject.Request;
+using Api.Ai.ApplicationService.Interfaces;
+using Api.Ai.Domain.DataTransferObject.Response;
+using WebApplication1.Areas.HelpPage.DialogflowLogic.App_Start;
 
 namespace WebApplication1.App_Start
 {
     public class DiscordBot
     {
         private readonly DiscordSocketClient bot;
-        private readonly ConfigModel dialogflowConfig;
+        private readonly IApiAiAppServiceFactory dialogflowInitializer;
+        private readonly IQueryAppService dialogflowService;
+        private readonly CodeRunnerAction actionResolver;
         private readonly Random random = new Random();
 
-        public DiscordBot()
+        public DiscordBot(IApiAiAppServiceFactory dialogflowInitializer)
         {
             bot = new DiscordSocketClient();
-            dialogflowConfig = new ConfigModel() {
-                AccesTokenClient = "57b94ef7ea6d46efa59db9e6a2db427f",
-                Language = ApiAi.Enums.LanguagesEnum.Italian
-            };
+            this.dialogflowInitializer = dialogflowInitializer ?? throw new Exception("Dialogflow instance not found!");
+            dialogflowService = dialogflowInitializer.CreateQueryAppService(
+                "https://api.api.ai/v1", "57b94ef7ea6d46efa59db9e6a2db427f");
+
+            actionResolver = CodeRunnerAction.Instance ?? new CodeRunnerAction();
+
             bot.Ready += ReadyAsync;
             bot.MessageReceived += MessageReceivedAsync;
         }
 
         public static void RegisterChatbot()
         {
-            new DiscordBot().Start();
+            var container = new Container();
+            container.RegisterInstance<IServiceProvider>(container);
+            container.Register<IApiAiAppServiceFactory, ApiAiAppServiceFactory>();
+            container.Register<IHttpClientFactory, HttpClientFactory>();
+            
+            new DiscordBot(container.GetInstance<IApiAiAppServiceFactory>()).Start();
         }
 
         private async void Start()
@@ -52,20 +69,22 @@ namespace WebApplication1.App_Start
             if (message.Author.Id == bot.CurrentUser.Id)
                 return;
 
-            var res = QueryService.SendRequest(dialogflowConfig, message.Content);
-            
-            if(res == null) {
-                await message.Channel.SendMessageAsync("Input not recognized, oni-chan");
-                return;
-            }
+            QueryRequest queryRequest = actionResolver.ResolveInputAction("", new Dictionary<string, object>()
+            {
+                { "sessionId", message.Author.Id.ToString() },
+                { "message", message.Content }
+            });
 
-            var messages = res.Messages.ToArray();
-            if(messages.Length == 0) {
-                await message.Channel.SendMessageAsync("Capisco ma non saprei come risponderti, oni-chan");
-                return;
-            }
+            if(queryRequest != null)
+            {
+                QueryResponse queryResponse = await dialogflowService.PostQueryAsync(queryRequest);
 
-            await message.Channel.SendMessageAsync(messages[random.Next(0, messages.Length - 1)].Text);
+                if(queryResponse.Result != null)
+                {
+                    string messageResponse = actionResolver.ResolveOutputAction(queryResponse.Result.Action, queryResponse);
+                    await message.Channel.SendMessageAsync(messageResponse);
+                }
+            }
         }
     }
 }

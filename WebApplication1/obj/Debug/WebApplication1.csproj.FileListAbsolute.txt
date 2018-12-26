@@ -140,5 +140,15 @@ C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Microsoft.Extensi
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\System.Collections.Immutable.xml
 C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\System.Interactive.Async.xml
-C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\ApiAi.dll
-C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\ApiAi.xml
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.ApplicationService.dll
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.Domain.DataTransferObject.dll
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.Domain.Enum.dll
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.Domain.Service.dll
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.Infrastructure.dll
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\SimpleInjector.dll
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.ApplicationService.pdb
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.Domain.DataTransferObject.pdb
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.Domain.Enum.pdb
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.Domain.Service.pdb
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\Api.Ai.Infrastructure.pdb
+C:\Users\IVAN\source\repos\WebApplication1\WebApplication1\bin\SimpleInjector.xml

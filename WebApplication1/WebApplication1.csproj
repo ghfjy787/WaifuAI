@@ -46,8 +46,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ApiAi, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ApiAi.1.0.4\lib\net45\ApiAi.dll</HintPath>
+    <Reference Include="Api.Ai.ApplicationService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Api.Ai.Csharp.1.0.2.4\lib\net461\Api.Ai.ApplicationService.dll</HintPath>
+    </Reference>
+    <Reference Include="Api.Ai.Domain.DataTransferObject, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Api.Ai.Csharp.1.0.2.4\lib\net461\Api.Ai.Domain.DataTransferObject.dll</HintPath>
+    </Reference>
+    <Reference Include="Api.Ai.Domain.Enum, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Api.Ai.Csharp.1.0.2.4\lib\net461\Api.Ai.Domain.Enum.dll</HintPath>
+    </Reference>
+    <Reference Include="Api.Ai.Domain.Service, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Api.Ai.Csharp.1.0.2.4\lib\net461\Api.Ai.Domain.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Api.Ai.Infrastructure, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Api.Ai.Csharp.1.0.2.4\lib\net461\Api.Ai.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Discord.Net.Commands, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Discord.Net.Commands.1.0.2\lib\netstandard1.1\Discord.Net.Commands.dll</HintPath>
@@ -92,6 +104,9 @@
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.4.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.4.2\lib\net45\SimpleInjector.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -304,6 +319,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\DialogflowLogic\CodeRunnerAction.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\DialogflowLogic\Enums\CodeRunnerType.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
     <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
