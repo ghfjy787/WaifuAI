@@ -319,6 +319,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\DialogflowLogic\ActionResolver\GenericResolver.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\DialogflowLogic\Attribute\DialogflowActionResolver.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\DialogflowLogic\Attribute\DialogflowClassResolver.cs" />
     <Compile Include="Areas\HelpPage\App_Start\DialogflowLogic\CodeRunnerAction.cs" />
     <Compile Include="Areas\HelpPage\App_Start\DialogflowLogic\Enums\CodeRunnerType.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />

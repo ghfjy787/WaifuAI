@@ -69,10 +69,11 @@ namespace WebApplication1.App_Start
             if (message.Author.Id == bot.CurrentUser.Id)
                 return;
 
-            QueryRequest queryRequest = actionResolver.ResolveInputAction("", new Dictionary<string, object>()
+            QueryRequest queryRequest = actionResolver.ResolveInputAction(new Dictionary<string, object>()
             {
                 { "sessionId", message.Author.Id.ToString() },
-                { "message", message.Content }
+                { "message", message.Content },
+                { "previousResponse", null }
             });
 
             if(queryRequest != null)
